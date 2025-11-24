@@ -3,9 +3,9 @@ import streamlit as st
 import numpy as np
 
 # Load trained model & preprocessors
-model = joblib.load("models/best_model.joblib")
-scaler = joblib.load("models/scaler.pkl")
-encoder = joblib.load("models/encoder.pkl")
+model = ("best_model.joblib")
+scaler = ("scaler.pkl")
+encoder = ("encoder.pkl")
 
 st.title("🧠 Mental Health Prediction App")
 
