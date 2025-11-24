@@ -5,9 +5,9 @@ import joblib
 # Load model & preprocessors
 import joblib
 
-model = joblib.load("models/model.pkl")
-scaler = joblib.load("models/scaler.pkl")
-encoder = joblib.load("models/encoder.pkl")
+model = ("models/best_model.joblib")
+scaler = ("models/scaler.pkl")
+encoder = ("models/encoder.pkl")
 
 
 st.title("🧠 Mental Health Prediction App")
