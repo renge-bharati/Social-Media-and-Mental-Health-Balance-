@@ -1,21 +1,24 @@
+import joblib
 import streamlit as st
 import numpy as np
-import joblib
 
-# Load the trained scaler (make sure the file exists in models folder)
-scaler = joblib.load("models/scaler.pkl")
+# Load trained model & preprocessors
+model = ("models/best_model.joblib")
+scaler = ("models/scaler.pkl")
+encoder = ("models/encoder.pkl")
 
-# Streamlit input sliders
+st.title("🧠 Mental Health Prediction App")
+
 time_spent = st.slider("Daily Social Media Time (minutes)", 0, 600, 60)
 posts = st.slider("Posts Per Week", 0, 50, 5)
 likes = st.slider("Average Likes", 0, 500, 100)
 
-# Button to predict
-if st.button("Transform Data"):
-    # Prepare data as 2D array
-    data = np.array([[time_spent, posts, likes]])
+if st.button("Predict"):
 
-    # Transform using loaded scaler
+    data = np.array([[time_spent, posts, likes]])
     data_scaled = scaler.transform(data)
 
-    st.write("Scaled Data:", data_scaled)
+    pred = model.predict(data_scaled)[0]
+    result = encoder.inverse_transform([pred])[0]
+
+    st.success(f"Predicted Mental Health Condition: {result}")
