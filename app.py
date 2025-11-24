@@ -3,8 +3,12 @@ import numpy as np
 import joblib
 
 # Load model & preprocessors
-model = ("models/best_model.joblib")
-scaler = ("models/scaler.pkl")
+import joblib
+
+model = joblib.load("models/model.pkl")
+scaler = joblib.load("models/scaler.pkl")
+encoder = joblib.load("models/encoder.pkl")
+
 
 st.title("🧠 Mental Health Prediction App")
 
