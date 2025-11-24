@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # Load model & preprocessors
-model = joblib.load("models/model.pkl")
+model = joblib.load("models/best_model.joblib")
 scaler = joblib.load("models/scaler.pkl")
 encoder = joblib.load("models/encoder.pkl")
 
