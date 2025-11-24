@@ -4,9 +4,6 @@ import joblib
 
 # Load the trained scaler (make sure the file exists in models folder)
 scaler = joblib.load("models/scaler.pkl")
-model = joblib.load("models/best_model.joblib")
-encoder = joblib.load("models/encoder.pkl")
-
 
 # Streamlit input sliders
 time_spent = st.slider("Daily Social Media Time (minutes)", 0, 600, 60)
